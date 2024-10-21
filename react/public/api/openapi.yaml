@@ -1,0 +1,128 @@
+openapi: '3.0.1'
+info:
+  title: Cadastro de Objetos
+  description: Um cadastro simples de objetos com informações de nome, foto, descrição, data que encontrou o objeto, data limite para devolução.
+  version: '0.1'
+
+servers:
+  - url: http://{host}:{porta}/api
+    variables:
+      host:
+        default: localhost
+      porta:
+        default: '3000'
+
+paths:
+  /objetos:
+    get:
+      summary: Acessar os objetos cadastrados.
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+             schema:
+              type: array
+
+    post:
+      summary: Cadastra um objeto.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                    type: string
+                foto:
+                    type: string
+                descricao:
+                    type: string
+                dataencontrado:
+                    type: string
+                    format: date
+                datalimite:
+                    type: string
+                    format: date
+                objetoentregue:
+                    type: boolean
+      responses:
+        201:
+          description: Objeto cadastrado.
+          content:
+            application/json:
+              type: object
+              properties: 
+                location:
+                  description: O URI do novo objeto cadastrado.
+                  type: string
+    
+  /objetos/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Acessa um Objeto.
+      responses:
+        200:
+          description: Ok
+          content: 
+            application/json:
+              schema:
+                type: object
+                properties:
+                 nome:
+                    type: string
+                 foto:
+                    type: string
+                 descricao:
+                    type: string
+                 dataencontrado:
+                    type: string
+                    format: date
+                 datalimite:
+                    type: string
+                    format: date
+                 objetoentregue:
+                    type: boolean
+
+    delete:
+      summary: Apaga um Objeto.
+      responses:
+        200:
+          description: Ok
+        404:
+          description: Objeto não encontrado
+
+    put:
+      summary: Altera um Objeto.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                    type: string
+                foto:
+                    type: string
+                descricao:
+                    type: string
+                dataencontrado:
+                    type: string
+                    format: date
+                datalimite:
+                    type: string
+                    format: date
+                objetoentregue:
+                    type: boolean
+      responses:
+        200:
+          description: Ok.
+        404:
+          description: Página não encontrada
