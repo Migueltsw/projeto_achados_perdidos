@@ -1,0 +1,15 @@
+.bannerComponente {
+    background-image: url('./img/Coapac.png');
+    background-size: 100%;  /* Ajustei para 'cover' para cobrir toda a área */
+    background-position: center;
+    height: 750px;  /* Defini a altura para que a imagem seja visível */
+}
+
+.fundoCards {
+    background: linear-gradient(to bottom, #f5f1e1, #66ff66);
+}
+
+.centralizado {
+    color: black;
+    text-align: center;
+}
