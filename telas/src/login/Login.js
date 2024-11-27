@@ -1,56 +1,43 @@
+import './login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Login(){
-    return(
-        <div class="container">
-	        <div class="d-flex justify-content-center h-100">
-		        <div class="card">
-			        <div class="card-header">
-				<br />
-				<h3 align="center">Login</h3>
-				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
+    return (
+		<div className="card">
+			<div className="card-body">
+				<div className="form-group mt-3">
+					<label for="exampleInputEmail1">Email</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
 				</div>
-			</div>
 
-			<div class="card-body">
-				<form>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" class="form-control" placeholder="usuario" />
-						
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" class="form-control" placeholder="senha" />
-					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox" />Lembrar Login
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Entrar" class="btn float-right login_btn" />
-					</div>
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Entrar usando o SUAP <br /> <a id="botao-login-suap" href="index.html">Clique aqui</a>
+				<div className="form-group mt-3">
+					<label for="exampleInputPassword1">Senha </label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" />
+				</div>
+
+				<button type="submit" class="btn btn btn-success rounded-pill mt-4">Enviar</button>
+
+				<div class="card-footer">
+				<div className="links">
+					Entrar usando o SUAP<br/><a id="botao-login-suap" href="ClienteSUAP.js">Clique aqui</a>
 				</div>
 				
-				<div class="d-flex justify-content-center">
-					<a href="#">Esqueceu sua senha?</a>
-				</div>
 			</div>
-			
-			
+			</div>
 		</div>
-	</div>
+	);
+};
+
+{/* <div class="card-body">
+<div class="form-group">
+	<label for="exampleInputEmail1">Email</label>
+	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
 </div>
 
-    );
-}
+<div className="form-group">
+	<label for="exampleInputPassword1">Senha </label>
+	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" />
+</div>
+
+<button type="submit" class="btn btn-primary">Enviar</button>
+</div> */}
