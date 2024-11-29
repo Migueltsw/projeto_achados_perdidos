@@ -1,6 +1,6 @@
 export default function Create(){
     return(
-        <form>
+        <form class="container justify-content-center align-items-center w-25 h-50 mt-5">
             <div class="form-group mb-3">
                 <label class="form-label" for="Imagem"><b>URL da Imagem</b></label>
                 <input class="form-control shadow-lg" type="text" name="img" placeholder="Digite a URL da imagem" required />

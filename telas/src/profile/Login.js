@@ -1,43 +1,45 @@
 import './login.css';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js";
+import './Cliente.js';
+import './js.cookie.js';
+
 
 export default function Login(){
+
+	const CLIENT_ID = '7xyE7MSEcbUJkUGyjjOWT45zViyrzFZRDzBAzfkp';
+	const HOME_URI = 'http://localhost:3000';
+	const REDIRECT_URI = HOME_URI + '/loggedin';
+	const SUAP_URL = 'https://suap.ifrn.edu.br';
+	const SCOPE = 'identificacao email documentos_pessoais';
+	
+	useEffect(() => {
+		const suap = new SuapClient(SUAP_URL, CLIENT_ID, HOME_URI, REDIRECT_URI, SCOPE);
+
+		suap.init();
+	
+		$("#suap-login-button").attr('href', suap.getLoginURL());
+	}, []); 
+	
+	
     return (
-		<div className="card">
-			<div className="card-body">
-				<div className="form-group mt-3">
-					<label for="exampleInputEmail1">Email</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
-				</div>
+		<form class="container justify-content-center align-items-center w-25 h-50 mt-5">
+			<div class="form-group mb-3">
+        	<label class="form-label" for="Email">Email</label>
+       	 	<input class="form-control shadow-lg" type="email" name="email" placeholder="Digite o Email" required />
+    	</div>
 
-				<div className="form-group mt-3">
-					<label for="exampleInputPassword1">Senha </label>
-					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" />
-				</div>
+    	<div class="form-group mb-5">
+        	<label class="form-label" for="Password">Senha</label>
+        	<input class="form-control shadow-lg" type="password" name="password" placeholder="Digite a Senha" required />
+    	</div>
 
-				<button type="submit" class="btn btn btn-success rounded-pill mt-4">Enviar</button>
-
-				<div class="card-footer">
-				<div className="links">
-					Entrar usando o SUAP<br/><a id="botao-login-suap" href="ClienteSUAP.js">Clique aqui</a>
-				</div>
-				
-			</div>
-			</div>
-		</div>
+    	<center>
+        	<button type="submit" class="btn btn-success w-50 shadow-lg mb-4"><b>Login</b></button>
+        	<p>Não tem uma conta? <a href="{{url('/login')}}" class="text-decoration-none link-success"><b>Cadastra-se</b></a></p>
+    	</center>
+		</form>
+	
 	);
-};
-
-{/* <div class="card-body">
-<div class="form-group">
-	<label for="exampleInputEmail1">Email</label>
-	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
-</div>
-
-<div className="form-group">
-	<label for="exampleInputPassword1">Senha </label>
-	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" />
-</div>
-
-<button type="submit" class="btn btn-primary">Enviar</button>
-</div> */}
+}

@@ -5,6 +5,9 @@ import './index.css';
 import Login from './profile/Login';
 import Home from './home/Home';
 import Cadastro from './profile/Cadastro';
+import Create from './Crud/Create';
+import Edit from './Crud/Edit';
+import Show from './Crud/Show';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -17,6 +20,9 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/create" element={<Create />} />
+        <Route path="/edit" element={<Edit />} />
+        <Route path="/show" element={<Show />} />
       </Routes>
     </Router>
   </React.StrictMode>

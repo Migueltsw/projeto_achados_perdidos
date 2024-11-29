@@ -4,7 +4,7 @@ export default function Show(){
         <div class="row">
             <div class="col-md-4">
                 <div class="card" style="transition: none;">
-                    <img src="{{$item->img}}" class="card-img-top" alt="{{$item->nome}}" />
+                    <img src="{{$item->img}}" class="card-img-top" alt="{{$objeto->nome}}" />
                     <div class="card-body">
                         <h2 class="card-title">Nome: </h2>
                         <p class="card-text"><b>Descrição: </b></p>

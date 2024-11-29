@@ -1,6 +1,6 @@
 export default function Cadastro () {
     return (
-        <form>
+        <form class="container justify-content-center align-items-center w-50 h-50 mt-5">
             <div class="form-group mb-3">
                 <label class="form-label" for="Nome"><b>Nome:</b></label>
                 <input class="form-control shadow-lg" type="text" name="name" placeholder="Digite o Nome" required />       
@@ -23,7 +23,7 @@ export default function Cadastro () {
 
             <center>
                 <button type="submit" class="btn btn-success w-50 shadow-lg mb-4"><b>Cadastra-se</b></button>
-                <p>Voçê já tem uma conta? <a href="{{url('/user/login')}}" class="text-decoration-none link-success"><b>Login</b></a></p>
+                <p>Você já tem uma conta? <a href="{{url('/login')}}" class="text-decoration-none link-success"><b>Login</b></a></p>
             </center> 
         </form>
        
