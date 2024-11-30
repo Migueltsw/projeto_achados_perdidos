@@ -8,6 +8,8 @@ import Cadastro from './profile/Cadastro';
 import Create from './Crud/Create';
 import Edit from './Crud/Edit';
 import Show from './Crud/Show';
+import Dashboard from './Dashboard/Dashboard';
+import Página404 from './Erro/Página404';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -20,9 +22,11 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create" element={<Create />} />
         <Route path="/edit" element={<Edit />} />
         <Route path="/show" element={<Show />} />
+        <Route path="/not-found" element={<Página404 />} />
       </Routes>
     </Router>
   </React.StrictMode>

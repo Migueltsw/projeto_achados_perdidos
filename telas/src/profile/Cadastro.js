@@ -23,7 +23,7 @@ export default function Cadastro () {
 
             <center>
                 <button type="submit" class="btn btn-success w-50 shadow-lg mb-4"><b>Cadastra-se</b></button>
-                <p>Você já tem uma conta? <a href="{{url('/login')}}" class="text-decoration-none link-success"><b>Login</b></a></p>
+                <p>Você já tem uma conta? <a href="/login" class="text-decoration-none link-success"><b>Login</b></a></p>
             </center> 
         </form>
        

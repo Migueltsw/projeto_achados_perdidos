@@ -1,25 +1,28 @@
 import './login.css';
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js";
 import './Cliente.js';
 import './js.cookie.js';
 
 
 export default function Login(){
 
-	const CLIENT_ID = '7xyE7MSEcbUJkUGyjjOWT45zViyrzFZRDzBAzfkp';
-	const HOME_URI = 'http://localhost:3000';
-	const REDIRECT_URI = HOME_URI + '/loggedin';
-	const SUAP_URL = 'https://suap.ifrn.edu.br';
-	const SCOPE = 'identificacao email documentos_pessoais';
+	var CLIENT_ID = '7xyE7MSEcbUJkUGyjjOWT45zViyrzFZRDzBAzfkp';
+	var HOME_URI = 'http://localhost:5000';
+	var REDIRECT_URI = `${HOME_URI}/loggedin`;
+	var SUAP_URL = 'https://suap.ifrn.edu.br';
+	var SCOPE = 'identificacao email documentos_pessoais';
 	
 	useEffect(() => {
 		const suap = new SuapClient(SUAP_URL, CLIENT_ID, HOME_URI, REDIRECT_URI, SCOPE);
 
 		suap.init();
 	
-		$("#suap-login-button").attr('href', suap.getLoginURL());
+		const botaologin = document.getElementById("suap-botao-login");
+
+    	if (botaologin) {
+      		botaologin.href = suap.getLoginURL();
+    	}
 	}, []); 
 	
 	
@@ -36,8 +39,8 @@ export default function Login(){
     	</div>
 
     	<center>
-        	<button type="submit" class="btn btn-success w-50 shadow-lg mb-4"><b>Login</b></button>
-        	<p>Não tem uma conta? <a href="{{url('/login')}}" class="text-decoration-none link-success"><b>Cadastra-se</b></a></p>
+        	<button id='suap-botao-login' type="submit" class="btn btn-success w-50 shadow-lg mb-4"><b>Login</b></button>
+        	<p>Não tem uma conta? <a href='/cadastro' class="text-decoration-none link-success"><b>Cadastra-se</b></a></p>
     	</center>
 		</form>
 	
