@@ -9,6 +9,7 @@ import Create from './Crud/Create';
 import Edit from './Crud/Edit';
 import Show from './Crud/Show';
 import Dashboard from './Dashboard/Dashboard';
+import Resgate from './resgate-objeto/Resgate';
 import Página404 from './Erro/Página404';
 import reportWebVitals from './reportWebVitals';
 
@@ -27,6 +28,7 @@ root.render(
         <Route path="/edit" element={<Edit />} />
         <Route path="/show" element={<Show />} />
         <Route path="/not-found" element={<Página404 />} />
+        <Route path="/resgate" element={<Resgate />} />
       </Routes>
     </Router>
   </React.StrictMode>

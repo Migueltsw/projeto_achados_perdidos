@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Cliente.js';
 import './js.cookie.js';
+import './settings.js';
 
 
 export default function Login(){
@@ -12,19 +13,17 @@ export default function Login(){
 	var REDIRECT_URI = `${HOME_URI}/loggedin`;
 	var SUAP_URL = 'https://suap.ifrn.edu.br';
 	var SCOPE = 'identificacao email documentos_pessoais';
-	
+
 	useEffect(() => {
-		const suap = new SuapClient(SUAP_URL, CLIENT_ID, HOME_URI, REDIRECT_URI, SCOPE);
-
+		var suap = new SuapClient(
+			SUAP_URL, CLIENT_ID, HOME_URI, REDIRECT_URI, SCOPE
+		);
+	
 		suap.init();
-	
-		const botaologin = document.getElementById("suap-botao-login");
-
-    	if (botaologin) {
-      		botaologin.href = suap.getLoginURL();
-    	}
+		$(document).ready(function () {
+			$("#suap-login-button").attr('href', suap.getLoginURL());
+		});
 	}, []); 
-	
 	
     return (
 		<form class="container justify-content-center align-items-center w-25 h-50 mt-5">

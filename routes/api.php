@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\User;
+use App\Http\Controllers\UserController;
 use App\Models\Objeto;
 
 /*
@@ -87,4 +88,7 @@ Route::prefix('/objetos')->name('objetos')->group(function() {
             $objeto->objetoentregue = $objeto_entregue;
         $objeto->save();    
     });
+
+    Route::post('/resgatar', [UserController::class, 'salvaUser'])->name('resgatar');
+
 });
