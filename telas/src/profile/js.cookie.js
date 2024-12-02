@@ -128,4 +128,7 @@
 	}
 
 	return init(function () {});
+
 }));
+
+export default window.Cookies;

@@ -1,9 +1,13 @@
+import './js.cookie.js';
+import { Cookies } from './js.cookie.js';
+import './Cliente.js';
 import './login.css';
+import { SuapClient } from './Cliente.js';
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Cliente.js';
-import './js.cookie.js';
 import './settings.js';
+import $ from 'jquery';
+
 
 
 export default function Login(){
@@ -14,6 +18,8 @@ export default function Login(){
 	var SUAP_URL = 'https://suap.ifrn.edu.br';
 	var SCOPE = 'identificacao email documentos_pessoais';
 
+	console.log(SUAP_URL, CLIENT_ID, HOME_URI, REDIRECT_URI, SCOPE);
+
 	useEffect(() => {
 		var suap = new SuapClient(
 			SUAP_URL, CLIENT_ID, HOME_URI, REDIRECT_URI, SCOPE
@@ -21,7 +27,7 @@ export default function Login(){
 	
 		suap.init();
 		$(document).ready(function () {
-			$("#suap-login-button").attr('href', suap.getLoginURL());
+			$("#suap-botao-login").attr('href', suap.getLoginURL());
 		});
 	}, []); 
 	

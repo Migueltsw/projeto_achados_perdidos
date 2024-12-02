@@ -13,7 +13,6 @@ import Resgate from './resgate-objeto/Resgate';
 import Página404 from './Erro/Página404';
 import reportWebVitals from './reportWebVitals';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

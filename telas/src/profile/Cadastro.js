@@ -22,7 +22,9 @@ export default function Cadastro () {
             </div>
 
             <center>
-                <button type="submit" class="btn btn-success w-50 shadow-lg mb-4"><b>Cadastra-se</b></button>
+                <a href="/cadastro">
+                    <button type="submit" class="btn btn-success w-50 shadow-lg mb-4"><b>Cadastra-se</b></button>
+                </a>
                 <p>Você já tem uma conta? <a href="/login" class="text-decoration-none link-success"><b>Login</b></a></p>
             </center> 
         </form>

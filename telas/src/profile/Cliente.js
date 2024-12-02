@@ -1,3 +1,4 @@
+export { SuapClient };
 var Token = function(value, expirationTimeInSeconds, scope) {
   
   
@@ -195,4 +196,6 @@ var Token = function(value, expirationTimeInSeconds, scope) {
           }
       });
     };
+
+    window.SuapClient = SuapClient;
 };
