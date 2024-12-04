@@ -9,7 +9,7 @@ const BarraNavegacao = () => {
         <a class="navbar-brand" href="#">Achados e perdidos</a>
         <form class="form-inline">
         <Link to="/login"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button></Link>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Registrar</button>
+        <Link to="/cadastro"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Registrar</button></Link>
         </form>
     </nav>
     </div>

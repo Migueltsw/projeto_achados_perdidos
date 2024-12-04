@@ -26,7 +26,7 @@ root.render(
         <Route path="/create" element={<Create />} />
         <Route path="/edit" element={<Edit />} />
         <Route path="/show" element={<Show />} />
-        <Route path="/not-found" element={<Página404 />} />
+        <Route path="*" element={<Página404 />} />
         <Route path="/resgate" element={<Resgate />} />
       </Routes>
     </Router>

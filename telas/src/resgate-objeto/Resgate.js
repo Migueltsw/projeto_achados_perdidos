@@ -23,6 +23,8 @@ export default function Resgate() {
             }),
         });
 
+        
+
         if (response.ok) {
             alert('E-mail enviado com sucesso! Verifique sua caixa de entrada.');
         } else {
@@ -78,7 +80,7 @@ export default function Resgate() {
                     </div>
                     <div className="form-group mt-3">
                         <label className="form-label"><b>Matrícula</b></label>
-                        <input className="form-control shadow-lg" type="number" placeholder="Matrícula" required value={matricula} onChange={(e) => setMatricula(e.target.value)} />
+                        <input className="form-control shadow-lg"  type="text" placeholder="Matrícula" required value={matricula} onChange={(e) => setMatricula(e.target.value)} />
                     </div>
                     <div className="form-group mt-3">
                         <label className="form-label"><b>Email</b></label>

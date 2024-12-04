@@ -9,7 +9,6 @@ import {
   MDBCardImage,
   MDBCardBody,
   MDBCardTitle,
-  MDBCardFooter,
   MDBRow,
   MDBCol
 } from 'mdb-react-ui-kit';
@@ -17,61 +16,64 @@ import {
 export default function Dashboard() {
   return (
     <>
-     <div className='d-flex flex-column min-vh-100 justify-content-between'>
-      <Navbar />
-     <BarraPesquisa />
-      <MDBRow className='row-cols-1 row-cols-md-5 justify-content-center g-4 mb-4 mt-3'>
-      <MDBCol>
-        <MDBCard className='h-100'>
-          <MDBCardImage
-            src='https://mdbootstrap.com/img/new/standard/city/044.webp'
-            alt='...'
-            position='top'
-          />
-          <MDBCardBody>
-            <MDBCardTitle>Objeto A</MDBCardTitle>
-            <MDBBtn color='success'>Resgatar</MDBBtn>
-          </MDBCardBody>
-          <MDBCardFooter>
-            <small className='text-muted'>Last updated 3 mins ago</small>
-          </MDBCardFooter>
-        </MDBCard>
-      </MDBCol>
-      <MDBCol>
-        <MDBCard className='h-100'>
-          <MDBCardImage
-            src='https://mdbootstrap.com/img/new/standard/city/043.webp'
-            alt='...'
-            position='top'
-          />
-          <MDBCardBody>
-            <MDBCardTitle>Objeto B</MDBCardTitle>
-            <MDBBtn color='success'>Resgatar</MDBBtn>
-          </MDBCardBody>
-          <MDBCardFooter>
-            <small className='text-muted'>Last updated 3 mins ago</small>
-          </MDBCardFooter>
-        </MDBCard>
-      </MDBCol>
-      <MDBCol>
-        <MDBCard className='h-100'>
-          <MDBCardImage
-            src='https://mdbootstrap.com/img/new/standard/city/042.webp'
-            alt='...'
-            position='top'
-          />
-          <MDBCardBody>
-            <MDBCardTitle>Objeto C</MDBCardTitle>
-            <MDBBtn color='success'>Resgatar</MDBBtn>
-          </MDBCardBody>
-          <MDBCardFooter>
-            <small className='text-muted'>Last updated 3 mins ago</small>
-          </MDBCardFooter>
-        </MDBCard>
-      </MDBCol>
-      </MDBRow>
-      <Footer className='mb-4 mt-auto'/>
-  </div>
-  </>
+      <div className="d-flex flex-column min-vh-100 justify-content-between mt-4">
+        <Navbar />
+        <BarraPesquisa />
+
+        {/* Container de cards, agora com centralização */}
+        <MDBRow className="d-flex justify-content-center g-4 mb-4 mt-3">
+          <MDBCol xs={12} sm={6} md={4} lg={3}> {/* Ajuste as larguras conforme necessário */}
+            <MDBCard className="h-100">
+              <MDBCardImage
+                src="/camisa-preta.jpg"
+                alt="Objeto A"
+                position="top"
+                className="img-fluid"
+              />
+              <MDBCardBody>
+                <MDBCardTitle>Objeto A</MDBCardTitle>
+                <a href="/resgate">
+                  <MDBBtn color="success">Resgatar</MDBBtn>
+                </a>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+          <MDBCol xs={12} sm={6} md={4} lg={3}>
+            <MDBCard className="h-100">
+              <MDBCardImage
+                src="/camisa-preta.jpg"
+                alt="Objeto B"
+                position="top"
+                className="img-fluid"
+              />
+              <MDBCardBody>
+                <MDBCardTitle>Objeto B</MDBCardTitle>
+                <a href="/resgate">
+                  <MDBBtn color="success">Resgatar</MDBBtn>
+                </a>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+          <MDBCol xs={12} sm={6} md={4} lg={3}>
+            <MDBCard className="h-100">
+              <MDBCardImage
+                src="/camisa-preta.jpg"
+                alt="Objeto C"
+                position="top"
+                className="img-fluid"
+              />
+              <MDBCardBody>
+                <MDBCardTitle>Objeto C</MDBCardTitle>
+                <a href="/resgate">
+                  <MDBBtn color="success">Resgatar</MDBBtn>
+                </a>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+
+        <Footer className="mb-4 mt-auto" />
+      </div>
+    </>
   );
 }
