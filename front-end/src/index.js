@@ -12,6 +12,7 @@ import CadastroAdmin from './Admin/CadastroAdmin';
 import Dashboard from './Dashboard/Dashboard';
 import Resgate from './resgate-objeto/Resgate';
 import Página404 from './Erro/Página404';
+import DashboardAdmin from './Admin/DashboardAdmin';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,6 +31,7 @@ root.render(
         <Route path="*" element={<Página404 />} />
         <Route path="/resgate" element={<Resgate />} />
         <Route path="/admin" element={<CadastroAdmin />} />
+        <Route path="/dashboardadm" element={<DashboardAdmin />} />
       </Routes>
     </Router>
   </React.StrictMode>
