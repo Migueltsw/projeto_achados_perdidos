@@ -3,7 +3,7 @@ import Styles from './Home.module.css';
 import creator1 from './img/Eduardo.jpeg';
 import creator2 from './img/Miguel.jpeg';
 import creator3 from './img/Laura.jpeg';
-import creator4 from './img/Coapac.png';
+import creator4 from './img/Luanderson.jpg';
 
 const Cards = () => {
     const creators = [

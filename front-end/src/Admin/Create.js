@@ -21,6 +21,11 @@ export default function Create(){
                 <input class="form-control shadow-lg" type="date" name="data_cadastro" placeholder="Digite a data" required />
             </div>
 
+            <div class="form-group mb-5">
+                <label class="form-label" for="Data">Data Limite</label>
+                <input class="form-control shadow-lg" type="date" name="data_limite" placeholder="Digite a data" required />
+            </div>
+
             <center>
                 <button type="submit" class="btn btn-success w-50 shadow-lg mb-4"><b>Cadastrar</b></button>
             </center>
