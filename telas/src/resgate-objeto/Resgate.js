@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 export default function Resgate() {
-
     const [nome, setNome] = useState('');
     const [matricula, setMatricula] = useState('');
     const [email, setEmail] = useState('');
@@ -23,8 +22,6 @@ export default function Resgate() {
             }),
         });
 
-        
-
         if (response.ok) {
             alert('E-mail enviado com sucesso! Verifique sua caixa de entrada.');
         } else {
@@ -33,19 +30,20 @@ export default function Resgate() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="container d-flex justify-content-start align-items-center w-100">
-            <div className="row">
-                <div className="col-md-6 d-flex justify-content-center align-items-center">
-                    <div className="d-flex justify-content-center align-items-center bg-light border rounded shadow-sm" style={{ maxWidth: "100%", maxHeight: "100%" }}>
-                        <img src="/camisa-preta.jpg" alt="Imagem do objeto" className="img-fluid" />
-                    </div>
+        <form onSubmit={handleSubmit} className="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center w-100 mt-4">
+            {/* Imagem do objeto */}
+            <div className="col-md-6 col-sm-12 d-flex justify-content-center mb-4 mb-md-0">
+                <div className="bg-light border rounded shadow-sm d-flex justify-content-center align-items-center" style={{ maxWidth: "100%", maxHeight: "100%" }}>
+                    <img src="/camisa-preta.jpg" alt="Imagem do objeto" className="img-fluid" />
                 </div>
             </div>
 
-            <div className="col-md-6 d-flex flex-column">
+            {/* Informações do objeto e formulário */}
+            <div className="col-md-6 col-sm-12 d-flex flex-column">
                 <h2 className="mt-4"><b>Camisa Preta</b></h2>
 
-                <div className="card my-3" style={{ width: "400px" }}>
+                {/* Descrição do objeto */}
+                <div className="card my-3">
                     <div className="card-body">
                         <h5 className="card-title">Descrição</h5>
                         <p className="card-text">
@@ -54,6 +52,7 @@ export default function Resgate() {
                     </div>
                 </div>
 
+                {/* Datas de encontro e doação */}
                 <div className="row">
                     <div className="col-sm-6 mt-4">
                         <div className="card">
@@ -73,6 +72,7 @@ export default function Resgate() {
                     </div>
                 </div>
 
+                {/* Formulário */}
                 <div className="row">
                     <div className="form-group mt-3">
                         <label className="form-label"><b>Nome</b></label>
@@ -80,7 +80,7 @@ export default function Resgate() {
                     </div>
                     <div className="form-group mt-3">
                         <label className="form-label"><b>Matrícula</b></label>
-                        <input className="form-control shadow-lg"  type="text" placeholder="Matrícula" required value={matricula} onChange={(e) => setMatricula(e.target.value)} />
+                        <input className="form-control shadow-lg" type="text" placeholder="Matrícula" required value={matricula} onChange={(e) => setMatricula(e.target.value)} />
                     </div>
                     <div className="form-group mt-3">
                         <label className="form-label"><b>Email</b></label>
@@ -88,6 +88,7 @@ export default function Resgate() {
                     </div>
                 </div>
 
+                {/* Botões */}
                 <div className="row">
                     <div className="col-sm-6 mt-5 btn-group-toggle">
                         <button type="submit" className="btn btn-success w-100 shadow-lg mb-4"><b>Resgatar</b></button>
