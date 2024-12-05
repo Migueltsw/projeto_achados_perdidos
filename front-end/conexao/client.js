@@ -1,15 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
-const baseURL = 'http://localhost:8000';
-
-export function getImage(path) {
-    return `${baseURL}/storage/${path}`;
-}
-
-const client = axios.create({
-    baseURL: baseURL,
-    withCredentials: true,
-    withXSRFToken: true,
-});
-
-export default client;
+axios.defaults.baseURL = 'http://localhost:8000'; // Back-end Laravel
+axios.defaults.withCredentials = true; // Envia os cookies automaticamente nas requisições
