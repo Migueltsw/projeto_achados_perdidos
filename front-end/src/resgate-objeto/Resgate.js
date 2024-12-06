@@ -86,7 +86,7 @@ export default function Resgate() {
                     <div className="card-body">
                         <h5 className="card-title">Descrição</h5>
                         <p className="card-text">
-                            Lorem ipsum dolor sit amet. In voluptas numquam qui illo doloribus qui inventore rerum aut maxime nulla quo error modi. Sed saepe cumque et ipsam aperiam vel ullam fuga cum quisquam consequatur. Sed dolore laborum hic corrupti autem est nesciunt dolor ut veniam enim.
+                        A camisa preta é confeccionada em um tecido de alta qualidade, com uma textura suave e um acabamento fosco elegante que reflete discrição e estilo. A tonalidade preta é profunda e uniforme, transmitindo sofisticação e versatilidade, adequada para diversas ocasiões, tanto formais quanto casuais. O corte da camisa é moderno e ajustado, realçando a silhueta sem restringir os movimentos. Possui mangas longas com punhos fechados por botões discretos no mesmo tom, proporcionando um visual limpo e minimalista. A gola é clássica e estruturada, mantendo sua forma impecável mesmo após várias lavagens. A parte frontal apresenta uma fileira de botões ocultos por uma aba de tecido, reforçando o design minimalista. Uma pequena etiqueta na costura lateral, quase imperceptível, adiciona um toque de marca sutil. Nas costas, há um leve recorte central que ajuda na mobilidade e no ajuste perfeito ao corpo. O tecido é respirável e de fácil manutenção, com propriedades que evitam amassados, tornando a peça prática para o dia a dia ou viagens. Internamente, as costuras são reforçadas e bem acabadas, garantindo durabilidade e conforto ao longo do uso.
                         </p>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ export default function Resgate() {
                         <div className="card">
                             <div className="card-body">
                                 <h5 className="card-title">Data de Encontro</h5>
-                                <p className="card-text">01/01/2001</p>
+                                <p className="card-text">08/11/2024</p>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ export default function Resgate() {
                         <div className="card">
                             <div className="card-body">
                                 <h5 className="card-title">Data de Doação</h5>
-                                <p className="card-text">02/02/2001</p>
+                                <p className="card-text">27/11/2024</p>
                             </div>
                         </div>
                     </div>
