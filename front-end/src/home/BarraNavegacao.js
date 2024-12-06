@@ -11,7 +11,7 @@ const BarraNavegacao = () => {
           src={logoimg} 
           alt="Logo" 
           style={{
-            height: '70px', // Ajusta a altura da logo
+            height: '50px', // Ajusta a altura da logo
             width: 'auto',  // Mantém a proporção
           }} 
         />
