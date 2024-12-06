@@ -23,32 +23,28 @@ const Cards = () => {
                 <img className="card-img-top" src={creator1} alt="Eduardo Nogueira" />
                 <div className="card-body">
                     <h5 className="card-title">Eduardo Nogueira</h5>
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                    <p className="card-text">Sou estudante do IFRN Campus Caicó e busco sempre ampliar meu conhecimento na área de tecnologia.</p>
                 </div>
             </div>
             <div className="card m-3" style={{ width: '18rem' }}>
                 <img className="card-img-top" src={creator2} alt="Miguel Arcanjo" />
                 <div className="card-body">
                     <h5 className="card-title">Miguel Arcanjo</h5>
-                    <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                    <p className="card-text">Sou estudante do IFRN Campus Caicó e procuro sempre buscar aprendizado constante.</p>
                 </div>
             </div>
             <div className="card m-3" style={{ width: '18rem' }}>
                 <img className="card-img-top" src={creator3} alt="Laura Paiva" />
                 <div className="card-body">
                     <h5 className="card-title">Laura Paiva</h5>
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                    <p className="card-text">Sou estudante do IFRN Campus Caicó e sempre busco novos conhecimentos e compartilho o que aprendo para ajudar as pessoas.</p>
                 </div>
             </div>
             <div className="card m-3" style={{ width: '18rem' }}>
                 <img className="card-img-top" src={creator4} alt="Luanderson" />
                 <div className="card-body">
                     <h5 className="card-title">Luanderson</h5>
-                    <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                    <p className="card-text">Sou estudante do IFRN campus Caicó e busco inovação em forma de conhecimento.</p>
                 </div>
             </div>
         </div>

@@ -1,9 +1,37 @@
-import { useState } from 'react';
+import { useState, useLayoutEffect, useRef } from 'react';
 
 export default function Resgate() {
     const [nome, setNome] = useState('');
     const [matricula, setMatricula] = useState('');
     const [email, setEmail] = useState('');
+
+    const [imageSize, setImageSize] = useState({ width: 400, height: 400 });
+    const imageRef = useRef(null);
+
+    useLayoutEffect(() => {
+        if (imageRef.current) {
+            imageRef.current.style.width = `${imageSize.width}px`;
+            imageRef.current.style.height = `${imageSize.height}px`;
+        }
+    }, [imageSize]);
+
+    const increaseSize = () => {
+        setImageSize((prevSize) => ({
+            width: prevSize.width + 60,
+            height: prevSize.height + 60,
+        }));
+    };
+
+    const decreaseSize = () => {
+        setImageSize((prevSize) => ({
+            width: prevSize.width - 60,
+            height: prevSize.height - 60,
+        }));
+    };
+
+    const resetSize = () => {
+        setImageSize({ width: 400, height: 400 });
+    };
 
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -18,7 +46,7 @@ export default function Resgate() {
             },
             body: JSON.stringify({
                 nome,
-                email, 
+                email,
             }),
         });
 
@@ -32,9 +60,20 @@ export default function Resgate() {
     return (
         <form onSubmit={handleSubmit} className="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center w-100 mt-4">
             {/* Imagem do objeto */}
-            <div className="col-md-6 col-sm-12 d-flex justify-content-center mb-4 mb-md-0">
+            <div className="col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center mb-4 mb-md-0">
                 <div className="bg-light border rounded shadow-sm d-flex justify-content-center align-items-center" style={{ maxWidth: "100%", maxHeight: "100%" }}>
-                    <img src="/camisa-preta.jpg" alt="Imagem do objeto" className="img-fluid" />
+                    <img
+                        ref={imageRef}
+                        src="/camisa-preta.jpg"
+                        alt="Imagem do objeto"
+                        className="img-fluid"
+                        style={{ transition: 'width 0.3s ease, height 0.3s ease' }}
+                    />
+                </div>
+                <div className="button-group mt-3">
+                    <button type="button" className="btn btn-primary m-1" onClick={increaseSize}>Aumentar</button>
+                    <button type="button" className="btn btn-secondary m-1" onClick={decreaseSize}>Diminuir</button>
+                    <button type="button" className="btn btn-warning m-1" onClick={resetSize}>Redefinir</button>
                 </div>
             </div>
 
