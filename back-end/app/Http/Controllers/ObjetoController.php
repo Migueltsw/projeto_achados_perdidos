@@ -3,85 +3,71 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Comentario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ObjetoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        // Retorna a view que contém o formulário de criação de item
         return view('items.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Armazena um novo recurso no banco de dados.
      */
     public function store(Request $request)
     {
+        // Valida os dados enviados pelo formulário
         $request->validate([
             'nome' => 'required|string|max:255',
-            'descricao' => 'required|string|max:1000', // Certifique-se de que este campo está no request
+            'descricao' => 'required|string|max:1000',
             'data_cadastro' => 'required|date',
             'img' => 'required|url',
         ]);
-        
+
+        // Cria um novo item com os dados validados
         $item = Item::create([
             'nome' => $request->nome,
-            'descricao' => $request->descricao, // Certifique-se de que este campo está presente
+            'descricao' => $request->descricao,
             'data_cadastro' => $request->data_cadastro,
             'img' => $request->img,
-            'user_id' => Auth::user()->id
+            'user_id' => Auth::user()->id, // ID do usuário logado (relacionamento com usuário)
         ]);
-        
+
+        // Salva o item no banco de dados
         $item->save();
 
+        // Redireciona o usuário para o painel principal após a criação
         return redirect('/dashboard');
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Item $item)
-    {
-        //
-        $comentarios = Comentario::where('item_id', $item->id)->get();
-        
-        return view('items.show', compact('item', 'comentarios'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
+     * Exibe o formulário para edição de um recurso existente.
      */
     public function edit(Item $item)
     {
-        //
+        // Retorna a view que contém o formulário de edição do item
         return view('items.edit', compact('item'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualiza um recurso existente no banco de dados.
      */
     public function update(Request $request, Item $item)
     {
+        // Valida os dados enviados pelo formulário de edição
         $request->validate([
             'nome' => 'required|string|max:255',
-            'descricao' => 'required|string|max:1000', // Certifique-se de que este campo está no request
+            'descricao' => 'required|string|max:1000',
             'data_cadastro' => 'required|date',
             'img' => 'required|url',
         ]);
 
-        // Atualiza o item
+        // Atualiza os atributos do item com os dados validados
         $item->nome = $request->nome;
         $item->descricao = $request->descricao;
         $item->data_cadastro = $request->data_cadastro;
@@ -90,15 +76,14 @@ class ObjetoController extends Controller
 
         $item->save();
 
-        return redirect('/item/' . $item->id . '/show')->alert('sucesso item atualizado com sucesso!');
+        return redirect('/dashboard');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove um recurso específico do banco de dados.
      */
     public function destroy(Item $item)
     {
-        //
         $item->delete();
         return redirect('/dashboard');
     }
