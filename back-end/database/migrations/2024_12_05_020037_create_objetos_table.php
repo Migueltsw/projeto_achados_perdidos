@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('objetos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('foto');
             $table->string('descricao');
-            $table->string('img');
-            $table->dateTime('data_cadastro');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');     
+            $table->date('data_encontrado');
+            $table->date('data_limite');
+            $table->boolean('objeto_entregue');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');     
             $table->timestamps();
         });
     }
