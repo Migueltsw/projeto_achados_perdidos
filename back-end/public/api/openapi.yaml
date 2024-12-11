@@ -1,7 +1,7 @@
 openapi: '3.0.1'
 info:
-  title: Cadastro de Objetos
-  description: Um cadastro simples de objetos com informações de nome, foto, descrição, data que encontrou o objeto, data limite para devolução.
+  title: Projeto achados e perdidos
+  description: Todas implementações do projeto documentadas.
   version: '0.1'
 servers:
   - url: http://{host}:{porta}/api
