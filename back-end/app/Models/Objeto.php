@@ -15,6 +15,6 @@ class Objeto extends Model
         'descricao',
         'data_encontrado',
         'data_limite',
-        'objeto_entregue',
+        'objeto_entregue'
     ];
 }
